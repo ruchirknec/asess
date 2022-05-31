@@ -1,0 +1,30 @@
+<div *ngFor="let inf of info | keyvalue">
+    <li>
+        {{inf.value}}
+    </li>
+</div>
+<div class="fixTableHead">
+    <table>
+        <thead>
+            <tr>
+                <th>Date and Time</th>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Close</th>
+                <th>Volume</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let key of Object.keys(info_time)">            
+            <tr *ngFor="let key of Object.keys(info_time)">               
+                <td>{{key}}</td>
+                <td *ngFor="let key2 of Object.keys(info_time[key])">{{info_time[key][key2]}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+    </ngx-spinner>   
